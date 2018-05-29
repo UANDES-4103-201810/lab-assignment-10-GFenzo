@@ -27,6 +27,9 @@
       }
     </style>
     <div style="position: absolute; top: 50px; right: 200px; width: 100px; text-align:right;">
+        <% if user_signed_in? %>
+          <h1> current_user.name </h1>
+        <% end %>
         <button class="button"><%= link_to "logout", destroy_user_session_path, method: :delete %></button>
         <!--    <li><%= link_to "Sign Up", new_user_registration_path %></li>-->
         <button class="button"><%= link_to "Login", new_user_session_path %></button>
